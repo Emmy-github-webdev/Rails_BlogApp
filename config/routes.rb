@@ -22,4 +22,9 @@ Rails.application.routes.draw do
   delete '/users/:user_id/posts/:post_id/comments/:comment_id', to: 'comments#destroy', as: 'user_comment_delete'
   
 
+    # API ROUTES
+
+    get '/api/posts', to: 'api_requests#all_posts'
+    get '/api/posts/:post_id/comments', to: 'api_requests#post_comments'
+    post '/api/posts/comment', to: 'api_requests#new_comments'
 end
